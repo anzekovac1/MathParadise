@@ -18,10 +18,10 @@ switch ($_SERVER["REQUEST_METHOD"])		{
 		}
 		else
 		{
-			pridobi_vse_igralce();					// Če odjemalec ne posreduje uporabniskoime, mu vrnemo podatke vseh igralcev
+			pridobi_vse_igralce();					//Če odjemalec ne posreduje uporabniskoime, mu vrnemo podatke vseh igralcev
 		}
 		break;
-
+			// Metoda post:
 	case 'POST':
 		dodaj_igralca();
 		break;
