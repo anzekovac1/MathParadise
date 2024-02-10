@@ -1,0 +1,32 @@
+RewriteEngine On 				# Vklopi 'rewriting engine'
+
+RewriteRule ^igralci/?$ igralci.php [NC,L]						# če gre za zahtevek na relativni URL '/igralci' ga spremeni v 'igralci.php'
+#RewriteRule ^igralci/(.+)/?$ igralci.php?uporabniskoime=$1 [NC,L] 	# preslika vzorec 'igralci/xxxx' v 'igralci.php?vzdevek=xxxx'
+RewriteRule ^igralci/$ igralci.php [NC,L,QSA]
+
+#RewriteRule ^igre/?$ igre.php [NC,L]						
+#RewriteRule ^igre/(.+)/?$ igre.php?uporabniskoime=$1 [NC,L]
+#RewriteRule ^igre/$ igre.php [NC,L,QSA]
+
+RewriteRule ^vseigre/?$ vseigre.php [NC,L]						
+#RewriteRule ^vseigre/(.+)/?$ vseigre.php?uporabniskoime=$1 [NC,L]
+RewriteRule ^vseigre/$ vseigre.php [NC,L,QSA]
+
+RewriteRule ^lestvica/?$ lestvica.php [NC,L]						
+#RewriteRule ^lestvica/(.+)/?$ lestvica.php?tezavnost=$1 [NC,L]
+RewriteRule ^lestvica/$ lestvica.php [NC,L,QSA]
+
+RewriteRule ^mnenja/?$ mnenja.php [NC,L]						
+#RewriteRule ^mnenja/(.+)/?$ mnenja.php?uporabniskoime=$1 [NC,L]
+RewriteRule ^mnenja/$ mnenja.php [NC,L,QSA]
+
+RewriteRule ^naloge/?$ naloge.php [NC,L]						
+RewriteRule ^naloge/(.+)/?$ naloge.php?tezavnost=$1 [NC,L]
+
+RewriteRule ^odstrani/?$ odstrani.php [NC,L]
+RewriteRule ^odstrani/$ odstrani.php [NC,L,QSA]
+
+RewriteCond %{HTTP:Authorization} ^(.+)$
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+
