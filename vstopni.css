@@ -1,0 +1,173 @@
+/* Dodaj to na konec datoteke */
+@import url('https://fonts.googleapis.com/css?family=Allerta Stencil');
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('slike/brez.png');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: rgba(173, 129, 87, 0.8);
+    text-align: center;
+    padding: 10px;
+    border-radius: 0 0 10px 10px; /* Dodal sem ta del za razpotegnjen rjav kvadrat */
+    width: 100%;
+    margin-bottom: 50px;
+}
+.header1 h1, .header1 img {
+    display: inline-block; /* Postavitev elementov v isto vrstico */
+    vertical-align: middle; /* Navpično poravnavanje elementov */
+}
+.header1 img {
+    width: 40px; /* Zelo majhna slika */
+    height: auto; /* Avtomatsko prilagajanje višine glede na širino */
+}
+.header1 h1 {
+    margin-right: 40px; /* Večji razmak med napisom in sliko */
+}
+
+.header1 {
+    background-color: rgba(173, 129, 87, 0.8);
+    text-align: center;
+    padding: 15px;
+    border-radius: 0 0 10px 10px; /* Dodal sem ta del za razpotegnjen rjav kvadrat */
+    width: 100%;
+    margin-bottom: 50px;
+    display: inline-block;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'nunito', sans-serif;
+    font-weight: 600;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    max-width: 800px;
+    position: relative;
+}
+
+.container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    min-width: 500px;
+    position: relative;
+}
+
+.box{
+    width: 450px;
+    background: #fff;
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.1),
+                -2px -0px 15px 2px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.wrapper{
+    position: absolute;
+    width: 455px;
+    height: 530px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.53);
+    box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
+                -2px -0px 15px 2px rgba(0,0,0,0.054);
+    transform: rotate(5deg);
+}
+
+.header header{
+    display: flex;
+    justify-content: right;
+}
+header img{
+    width: 25px;
+}
+.header p{
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+.input-box{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    position: relative;
+}
+i{
+    font-size: 22px;
+    position: absolute;
+    top: 35px;
+    right: 12px;
+    color: #595b5e;
+}
+
+input{
+    height: 40px;
+    border: 2px solid rgb(153,157,158);
+    border-radius: 7px;
+    margin: 7px 0;
+    outline: none;
+}
+.input-field{
+    font-weight: 500;
+    padding: 0 10px;
+    font-size: 17px;
+    color: #333;
+    background: transparent;
+    transition: all .3s ease-in-out;
+}
+.input-field:focus{
+    border:2px solid rgb(89,53,180);
+}
+.input-field:focus ~ i{
+    color: rgb(89,53,180);
+}
+.input-submit{
+    margin-top: 20px;
+    background: #1e263a;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.input-submit:hover{
+    background: #122b71;
+}
+.bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.bottom span a{
+    color: #727374;
+    text-decoration: none;
+}
+.bottom span a:hover{
+    text-decoration: underline;
+}
+
+.grid-parent-element { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    place-items: center;
+} 
+
+.grid-child-element { 
+    margin: 10px; 
+}

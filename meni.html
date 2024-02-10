@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MP - Uporabniški vmestnik</title>
+    
+</head>
+<body>
+    <div class="header1">
+        <h1>Math Paradise - Uporabniški vmestnik</h1>
+        <img src="slike/calc.png" alt="Calculator Image">
+        <body onload="prikaziUsername()">
+            <p>Uporabnik: <span id="Prikazuporabniskoime"></span></p>
+        </body>
+        <button onclick="odjava()" class="odjavi-se-btn">Odjavi se</button>
+    </div>
+    <div id="container">
+        <div id="buttons-container">
+            <button onclick="showContent('content1')">Vsi igralci</button>
+            <button onclick="showContent('content2')">Vse igre</button>
+            <button onclick="showContent('content3')">Vsa mnenja</button>
+            <button onclick="showContent('content5')">O igralcu</button>
+            <button onclick="showContent('content7')">Lestvica</button>
+            <button onclick="showContent('content8')">Oddaj mnenje</button>
+            <button onclick="showContent('content9')">Spremeni podatke</button>
+            <button id="admin" onclick="showContent('content4')">ADMIN moznost-1</button>
+            <button id="admin" onclick="showContent('content6')">ADMIN moznost-2</button>
+        </div>
+
+        <div id="content1" class="hidden">
+            <h2>Spodaj so prikazani vsi uporabniki</h2>
+            <table id="tabelaIgralci">
+                <!-- Tukaj bo dinamično generirana tabela -->
+            </table>
+        </div>
+
+        <div id="content2" class="hidden">
+            <h2>Spodaj so prikazane vse odigrane igre</h2>
+            <table id="tabelaIgre">
+                <!-- Tukaj bo dinamično generirana tabela -->
+            </table>
+        </div>
+
+        <div id="content3" class="hidden">
+            <h2>Spodaj so prikazana vsa mnenja</h2>
+            <table id="tabelaMnenja">
+                <!-- Tukaj bo dinamično generirana tabela -->
+            </table>
+        </div>
+
+        <div id="content4" class="hidden">
+            <h2>Identificiraj se kot administrator</h2>
+            <button onclick="preveriAdmin()">Vstopi</button><br>
+            <br>
+            <h2 id="naslovObrazec" class="hidden">Podatki novega igralca</h2>
+            <form id="obrazec" onsubmit="dodajIgralca(); return false;"class="hidden">
+                <label for="uporabniskoime">Uporabniško ime:</label><br>
+                <input type="text" name="uporabniskoime" required/> <br>
+                
+                <label for="geslo">Geslo:</label><br>
+                <input type="password" name="geslo" required/> <br>
+                
+                <label for="ime">Ime:</label><br>
+                <input type="text" name="ime" required/> <br>
+
+                <label for="priimek">Priimek:</label><br>
+                <input type="text" name="priimek" required/> <br>
+                
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" required/> <br>
+                <br>
+                <input type="submit" id="submit6" value="Vpiši novega uporabnika" />
+                <h2></h2>
+                <div id="odgovor1"></div>
+                <table id="sporociloDodaj">
+                </table>
+            </form>
+        </div>
+
+        <div id="content5" class="hidden">
+            <h2>Izvedi poizvedbo o igralcu:</h2>
+            <h2></h2>
+            <form id="infobrazec" onsubmit="podatkiIgralca(); return false;">
+				<label for="uporabniskoime">Uporabniško ime:</label>
+				<input type="text" name="uporabniskoime" required />
+				<input type="submit" id="submit2" value="Prikaži" />
+			</form>
+            <h3 id="naslovInfo" style="display: none;">Informacije o izbranem uporabniku in njegove odigrane igre:</h3>
+            <table id="tabelaInfo">
+            </table>
+            <div id="odgovorInfo"></div><br>
+
+            <br>
+            <table id="tabelaOdigraneIgre">
+            </table>
+            <div id="odgovorOdigrane"></div>
+        </div>
+
+        <div id="content6" class="hidden">
+            <h2>Identificiraj se kot administrator</h2>
+            <button onclick="preveriAdmin2()">Vstopi</button><br>
+            <br>
+            <h2 id="naslovObrazec2" class="hidden">Izberite uporabnika, ki ga želite spremeniti</h2>
+            <form id="sprememba" onsubmit="prikaziPodatkeIgralca(); return false;" class="hidden">
+                <label for="uporabniskoime">Uporabniško ime:</label>
+                <input type="text" name="uporabniskoime" required />
+                <input type="submit" id="submit5" value="Prikaži" />
+            </form>
+            <h2 id="obrazec3" class="hidden"></h2>
+            <h3 id="obrazec2" class="hidden">Spremeni željene podatke</h3>
+            <form id="posodobitev" onsubmit="posodobiPodatke(); return false;" style="display: none">
+                <label for="ime">Ime:</label>
+                <input type="text" name="ime" required/> <br>
+                <br>
+                <label for="priimek">Priimek:</label>
+                <input type="text" name="priimek" required/> <br>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" name="email" required/> <br>
+                <br>
+                <input type="submit" id="submit5" value="Posodobi" />
+                <input type="button" id="submit5" value="Odstrani uporabnika" onclick="odstraniUporabnika()" />
+                
+                <table id="sporociloMenjava">
+                </table>
+            </form>
+        </div>
+
+        <div id="content7" class="hidden">
+            <h2>Lestvica</h2>
+            <form id="obrazecLestvica" onsubmit="lestvica(); return false;">
+				<label for="tezavnost">Izberite težavnost:</label>
+				<select name="tezavnost">
+					<option value="1">Tezavnost 1</option>
+					<option value="2">Tezavnost 2</option>
+					<option value="3">Tezavnost 3</option>
+                    <option value="4">Tezavnost 4</option>
+				</select> 
+				<input type="submit" id="submit3" value="OK" />
+			</form>
+            <h1></h1>
+			<table id="tabelaLestvica">
+            </table>
+			<div id="odgovorLestvica"></div>
+        </div>
+
+        <div id="content8" class="hidden">
+            <h2>Oddaj svoje mnenje</h2>
+            <h4>Tukaj lahko oddaš svoje mnenje. Veseli bomo vsakega komentarja!</h4>
+            <form id="dodajmnenje" onsubmit="dodajMnenjeIgralca(); return false;">
+                <label for="ocena">Tvoja ocena:</label><br>
+                <br>
+                <select name="ocena" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select><br>
+                <br>
+
+                <label for="komentar">Tvoj komentar:</label><br>
+                <textarea name="komentar" rows="6" cols="50" style="width: 400px; resize: none;" required></textarea>
+                <br>
+                <br>
+
+                <input type="submit" id="submit1" value="Oddaj svoje mnenje"/>
+                <div id="odgovormnenje"></div><br>
+                <br>
+                <table id="sporociloDodajMnenje">
+                </table>
+            </form>
+        </div>
+
+        <div id="content9" class="hidden">
+            <h2>Tukaj lahko spremeniš in posodobiš svoje podatke!</h2>
+            <button onclick="prikaziPodatkeIgralcaSpremembe()">Naredi poizvedbo mojih podatkov</button><br>
+            <br>
+            <form id="spremembaUser">
+                <label for="uporabniskoime">Tvoje uporabniško ime:</label>
+                <span id="uporabniskoime"></span>
+            </form><br>
+            <h3>Spremeni željene podatke</h3>
+            <form id="posodobitevUser" onsubmit="posodobiSvojePodatke(); return false;">
+                <label for="ime">Ime:</label>
+                <input type="text" name="ime" required/> <br>
+                <br>
+                <label for="priimek">Priimek:</label>
+                <input type="text" name="priimek" required/> <br>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" name="email" required/> <br>
+                <br>
+                <input type="submit" id="submit4" value="Posodobi" />
+                <h2></h2>
+                <table id="sporocispremembo">
+                </table>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        var tabelaIgralciNalozena = false; // Spremenljivka za sledenje, ali je tabela igralcev že naložena
+        var tabelaLestvicaNalozena = false; // Spremenljivka za sledenje, ali je tabela lestvice že naložena
+        var tabelaIgreNalozena = false;
+        var tabelaMnenjaNalozena = false;
+        var tabelaInfoNalozena = false;
+        var tabelaPrikazSprememba = false;
+        var tabelaDodajMnenje = false;
+
+        var originalContent = {};
+        function showContent(contentId) {
+            if (contentId === 'content5'|| contentId === 'content6'|| contentId === 'content9'|| contentId === 'content4') {                        //--------------------
+            // Shrani prvotno vsebino ob prvem kliku na gumb content5                                                                               //--------------
+            if (!originalContent[contentId]) {                                                                                                      //---------
+                originalContent[contentId] = document.getElementById(contentId).innerHTML;                                                          //--REFRESH
+            }                                                                                                                                       //--GUMB5
+            // Ponastavi vsebino na prvotno                                                                                                         //-----------
+            document.getElementById(contentId).innerHTML = originalContent[contentId];                                                              //---------------
+            }                                                                                                                                       //-----------------------
+
+            // Skrij vsebino vseh gumbov
+            var contents = document.querySelectorAll('#container div:not(#buttons-container)');
+            contents.forEach(function(content) {
+                content.classList.add('hidden');
+            });
+
+            // Prikaži izbrano vsebino
+            var selectedContent = document.getElementById(contentId);
+            selectedContent.classList.remove('hidden');
+            if (contentId === 'content1' && !tabelaIgralciNalozena) {
+                vsiIgralci();
+                tabelaIgralciNalozena = true; // Nastavimo, da je tabela naložena
+            }
+
+            // Naloži tabelo lestvice ob prvem kliku na gumb "Lestvica"
+            if (contentId === 'content7' && !tabelaLestvicaNalozena) {
+                lestvica();
+                tabelaLestvicaNalozena = true; // Nastavi, da je tabela lestvice naložena
+            }
+
+            if (contentId === 'content2' && !tabelaIgreNalozena) {
+                vseIgre();
+                tabelaIgreNalozena = true; 
+            }
+
+            if (contentId === 'content3' && !tabelaMnenjaNalozena) {
+                vsaMnenja();
+                tabelaMnenjaNalozena = true; 
+            }
+
+            if (contentId === 'content5' && !tabelaInfoNalozena) {
+                podatkiIgralca();
+                tabelaInfoNalozena = true; 
+            }
+
+            if (contentId === 'content6' && !tabelaPrikazSprememba) {
+                prikaziPodatkeIgralca();
+                tabelaPrikazSprememba = true; 
+            }
+
+            if (contentId === 'content8' && tabelaDodajMnenje) {
+                dodajMnenjeIgralca();
+                tabelaDodajMnenje = true; 
+            }
+
+
+        }
+
+        // Vključi skripto za pridobivanje vseh igralcev
+        var scriptIgralci = document.createElement('script');
+        scriptIgralci.src = 'JS/vsiIgralci.js';
+        document.head.appendChild(scriptIgralci);
+        
+
+        // Vključi skripto dodajIgralca.js
+        var scriptDodajIgralca = document.createElement('script');
+        scriptDodajIgralca.src = 'JS/dodajIgralec.js';
+        document.head.appendChild(scriptDodajIgralca);
+       
+
+        // Vključi skripto za pridobivanje lestvice
+        var scriptLestvica = document.createElement('script');
+        scriptLestvica.src = 'JS/lestvica.js';
+        document.head.appendChild(scriptLestvica);
+
+        var scriptIgre = document.createElement('script');
+        scriptIgre.src = 'JS/vseIgre.js';
+        document.head.appendChild(scriptIgre);
+
+        var scriptMnenja = document.createElement('script');
+        scriptMnenja.src = 'JS/mnenja.js';
+        document.head.appendChild(scriptMnenja);
+
+        var scriptDodajMnenja = document.createElement('script');
+        scriptDodajMnenja.src = 'JS/dodajMnenje.js';
+        document.head.appendChild(scriptDodajMnenja);
+
+        var scriptInfo = document.createElement('script');
+        scriptInfo.src = 'JS/oigralcu.js';
+        document.head.appendChild(scriptInfo);
+
+        var scriptSprememba = document.createElement('script');
+        scriptSprememba.src = 'JS/sprememba.js';
+        document.head.appendChild(scriptSprememba);
+
+        var scriptSpremembaUser = document.createElement('script');
+        scriptSpremembaUser.src = 'JS/spremeniPodatke.js';
+        document.head.appendChild(scriptSpremembaUser);
+
+        var odjava = document.createElement('script');
+        odjava.src = 'JS/odjava.js';
+        document.head.appendChild(odjava);
+
+        var user = document.createElement('script');
+        user.src = 'JS/user.js';
+        document.head.appendChild(user);
+
+        
+
+
+
+    </script>
+</body>
+</html>

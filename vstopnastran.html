@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="vstopni.css">
+    <title>Math Paradise - Vstopna stran</title>
+</head>
+<body>
+    <div class="header1">
+        <h1>Math Paradise</h1>
+        <img src="slike/calc.png" alt="Calculator Image"> 
+    </div>
+
+    <div class="grid-parent-element">
+        <div class="grid-child-element">
+            <div class="box">
+                <div class="header">
+                    <h2>Prijavi se</h2>
+                        </div>
+                        <form id="prijavaobrazec" onsubmit="prijavise(); return false;">
+                            <div class="input-box">
+                            <label for="uporabniskoime">Uporabniško ime:</label><br>
+                            <input type="text" id="uporabniskoime" class="input-field" name="uporabniskoime" required/> <br>
+                            
+                            <label for="geslo">Geslo:</label><br>
+                            <input type="password" id="geslo" class="input-field" name="geslo" required/> <br>
+                            
+                            <input type="submit" class="input-submit" value="Vpiši se" />
+                            <h2></h2>
+                            <div id="message"></div>
+                            <table id="sporociloprijavi">
+                            </table>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        
+    
+
+        <div class="grid-child-element">
+            <div class="box">
+                <div class="header">
+                    <h2>Še nimaš računa? Registriraj se!</h2>
+                        </div>
+                            <form id="registracijaobrazec" onsubmit="registracija(); return false;">
+                            <div class="input-box">
+                            <label for="uporabniskoime2">Uporabniško ime</label>
+                            <input type="text" class="input-field" name="uporabniskoime" required>
+                    
+                            <label for="geslo2">Geslo</label>
+                            <input type="password" class="input-field" name="geslo" required>
+                    
+                            <label for="ime2">Ime</label>
+                            <input type="text" class="input-field" name="ime" required>
+                    
+                            <label for="priimek2">Priimek</label>
+                            <input type="text" class="input-field" name="priimek" required>
+                
+                            <label for="email2">Email</label>
+                            <input type="email" class="input-field" name="email" required>
+                    
+                            <input type="submit" class="input-submit" value="Registriraj se">
+                            <h2></h2>
+                            <div id="odgovor21"></div>
+                            <table id="sporociloregister">
+                            </table>
+                            </div>
+                        </form>                
+            </div>
+        </div>
+    </div>    
+                
+
+
+    <script>
+        var scriptLogin = document.createElement('script');
+        scriptLogin.src = 'JS/prijava.js';
+        document.head.appendChild(scriptLogin);
+
+        var scriptRegister = document.createElement('script');
+        scriptRegister.src = 'JS/register.js';
+        document.head.appendChild(scriptRegister);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('slike/odzadje.png');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.header1 h1, .header1 img {
+    display: inline-block; /* Postavitev elementov v isto vrstico */
+    vertical-align: middle; /* Navpično poravnavanje elementov */
+}
+.header1 img {
+    width: 40px; /* Zelo majhna slika */
+    height: auto; /* Avtomatsko prilagajanje višine glede na širino */
+}
+.header1 h1 {
+    margin-right: 40px; /* Večji razmak med napisom in sliko */
+}
+
+.header1 button {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+
+}
+
+p {
+    position: absolute;
+    top: 25px;
+    right: 140px;
+    font-size: 16px;
+    text-align: center;
+    cursor: cell;
+}
+
+.header1 {
+    background-color: rgba(173, 129, 87, 0.8);
+    text-align: center;
+    padding: 8px;
+    border-radius: 0 0 10px 10px; /* Dodal sem ta del za razpotegnjen rjav kvadrat */
+    width: 99%;
+    margin-bottom: 50px;
+    display: inline-block;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header {
+    background-color: rgba(173, 129, 87, 0.8);
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.header h1 {
+    color: black;
+}
+
+#buttons-container {
+    background-color:transparent;
+    width: 92%;
+    display: flex;
+    flex-wrap: wrap; /* Omogoča, da se elementi zlomijo na novo vrstico, če zmanjka prostora */
+    justify-content: center; /* Elementi so poravnani v sredini */
+    padding: 10px 0;
+    
+}
+
+button {
+    background-color:rgba(173, 129, 87, 0.8);
+    color: black;
+    border: 1px solid #543b2a;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1); /* Desno in spodaj siva senco */
+}
+
+#admin {
+    background-color: #745639;
+    color: black;
+    border: 1px solid #000000;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(141, 104, 70);
+    color: white;
+    border-radius: 5px;
+}
+
+.content-container {
+    background-color: #8d6846;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.styled-table th, .styled-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #AD7351;
+}
+
+.styled-table th {
+    background-color: #ad8157cc;
+    color: #000000;
+}
+
+.styled-table td {
+    font-size: 14px; /* Povečamo velikost besedila v celicah */
+}
+
+/* Oblikovanje izbire ocen */
+select[name="ocena"] {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Oblikovanje vnosnega polja komentarja */
+textarea[name="komentar"] {
+    width: 400px;
+    padding: 8px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    resize: none;
+}
+
+/* Oblikovanje gumba Oddaj svoje mnenje */
+input[id="submit1"] {
+    padding: 7px 7px;
+    border: none;
+    background-color: #ffffff;
+    color: rgb(37, 37, 37);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    /* Dodajanje sence */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1); /* Desno in spodaj siva senco */
+}
+input[id="submit2"] {
+    padding: 7px 7px;
+    border: none;
+    background-color: #ffffff;
+    color: rgb(37, 37, 37);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    /* Dodajanje sence */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1); /* Desno in spodaj siva senco */
+}
+
+input[id="submit3"] {
+    padding: 7px 7px;
+    border: none;
+    background-color: #ffffff;
+    color: rgb(37, 37, 37);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    /* Dodajanje sence */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1); /* Desno in spodaj siva senco */
+}
+
+input[id="submit4"] {
+    padding: 7px 7px;
+    border: none;
+    background-color: #ffffff;
+    color: rgb(37, 37, 37);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    /* Dodajanje sence */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1); /* Desno in spodaj siva senco */
+}
+input[id="submit5"] {
+    padding: 7px 7px;
+    border: none;
+    background-color: #ffffff;
+    color: rgb(37, 37, 37);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    /* Dodajanje sence */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1); /* Desno in spodaj siva senco */
+}
+
+input[id="submit6"] {
+    padding: 7px 7px;
+    border: none;
+    background-color: #ffffff;
+    color: rgb(37, 37, 37);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    /* Dodajanje sence */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1); /* Desno in spodaj siva senco */
+}
+
+input[id="submit7"] {
+    padding: 7px 7px;
+    border: none;
+    background-color: #ffffff;
+    color: rgb(37, 37, 37);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    /* Dodajanje sence */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1); /* Desno in spodaj siva senco */
+}
