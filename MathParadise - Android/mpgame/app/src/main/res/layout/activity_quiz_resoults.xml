@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rezultati"
+    tools:context=".QuizResoults">
+
+    <LinearLayout
+        android:id="@+id/linear_rezultati"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="400px"
+        android:layout_marginBottom="700px"
+        android:layout_marginLeft="70px"
+        android:layout_marginRight="70px"
+        android:background="@drawable/text_uvod">
+
+        <ImageView
+            android:layout_width="165dp"
+            android:layout_height="171dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="90dp"
+            android:background="@drawable/cup" />
+
+        <TextView
+            android:id="@+id/resoults"
+            android:layout_width="322dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="16dp"
+            android:text="Čestitam, prišel si do konca igre!"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="322dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="16dp"
+            android:text="Število pravilnih odgovorov je bilo:"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/correctAnswers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="0"
+            android:textColor="#00C853"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/incorrectAnswers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:textAlignment="center"
+            android:text=""
+            android:textColor="#E7AD71"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startNewQuizBtn"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="600dp"
+        android:background="@drawable/round_back_green20"
+        android:text="Nova igra!"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>

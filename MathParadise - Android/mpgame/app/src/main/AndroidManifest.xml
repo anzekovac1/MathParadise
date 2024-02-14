@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="si.uni_lj.fe.seminar.mathparadise">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:usesCleartextTraffic="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MathParadise"
+        tools:targetApi="31">
+        <activity
+            android:name=".QuizResoults"
+            android:exported="false" />
+        <activity
+            android:name=".QuizResoultsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".prvaigraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".stopnja4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".stopnja3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".stopnja2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".stopnja1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <!-- Dodajte intent-filter, če želite, da je ta aktivnost dostopna preko namenskih akcij -->
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@drawable/bg">
+
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prijavi se"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <EditText
+        android:id="@+id/inputuporabniskoime"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="@string/hintuporabniskoime"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inputgeslo"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="61dp"
+        android:ems="10"
+        android:hint="@string/hintgeslo"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/inputuporabniskoime"
+        app:layout_constraintStart_toStartOf="@+id/inputuporabniskoime"
+        app:layout_constraintTop_toTopOf="@+id/inputuporabniskoime" />
+
+    <Button
+        android:id="@+id/buttonlogin"
+        android:layout_width="0dp"
+        android:background="@drawable/roundedbutton"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Prijavi se"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/inputgeslo"
+        app:layout_constraintStart_toStartOf="@+id/inputgeslo"
+        app:layout_constraintTop_toBottomOf="@+id/inputgeslo"
+        app:rippleColor="@color/black"
+        app:strokeColor="@color/white" />
+
+    <TextView
+        android:id="@+id/haveaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Še nimam računa"
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/buttonlogin"
+        app:layout_constraintStart_toStartOf="@+id/buttonlogin"
+        app:layout_constraintTop_toTopOf="@+id/buttonlogin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
